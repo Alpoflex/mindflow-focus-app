@@ -5,14 +5,11 @@ import { CloudRain, Coffee, Waves, Volume2, VolumeX } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-// Daha güvenilir ses kaynakları (placeholder olarak)
+// Google Actions Sound Library URLs - Reliable and Public Domain
 const SOUND_URLS = {
-    rain: "https://assets.mixkit.co/active_storage/sfx/1109/1109-preview.mp3", // FIXME check mixkit url
-    // Rain icin baska bir url deneyelim, user 'ding' diyor dedi
-    // Asagidaki url 'Heavy rain' sesi
-    rain_new: "https://cdn.pixabay.com/audio/2022/02/16/audio_d144e05d27.mp3",
-    cafe: "https://cdn.pixabay.com/audio/2022/03/24/audio_3cb7c0500f.mp3", // Cafe ambiance
-    waves: "https://cdn.pixabay.com/audio/2022/01/18/audio_d0d52ef72f.mp3", // Ocean waves
+    rain: "https://actions.google.com/sounds/v1/weather/rain_heavy_loud.ogg",
+    cafe: "https://actions.google.com/sounds/v1/ambiences/coffee_shop.ogg",
+    waves: "https://actions.google.com/sounds/v1/water/waves_crashing.ogg",
 };
 
 export default function AmbientPlayer() {
@@ -22,7 +19,7 @@ export default function AmbientPlayer() {
     const audioRef = useRef<HTMLAudioElement | null>(null);
 
     const sounds = [
-        { id: "rain", name: t.sounds.rain, icon: CloudRain, url: SOUND_URLS.rain_new },
+        { id: "rain", name: t.sounds.rain, icon: CloudRain, url: SOUND_URLS.rain },
         { id: "cafe", name: t.sounds.cafe, icon: Coffee, url: SOUND_URLS.cafe },
         { id: "waves", name: t.sounds.waves, icon: Waves, url: SOUND_URLS.waves },
     ];
