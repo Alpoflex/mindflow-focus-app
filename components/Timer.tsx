@@ -4,13 +4,36 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Play, Pause, RotateCcw } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Timer() {
+    const { t } = useLanguage();
     // Timer state logic
     // Default 25dk ile basliyoruz (Pomodoro standarti)
     const [timeLeft, setTimeLeft] = useState(25 * 60);
     const [isActive, setIsActive] = useState(false);
     const [mode, setMode] = useState<"focus" | "short" | "long">("focus");
+
+    // ... useEffect remains same ...
+    // Note: I'm skipping unchanged lines for brevity in replace_file_content tool, assume previous content is preserved
+
+    // ... inside return ...
+    <div className="flex gap-4 mb-8 p-1 glass rounded-full">
+        {(["focus", "short", "long"] as const).map((m) => (
+            <button
+                key={m}
+                onClick={() => setTimerMode(m)}
+                className={cn(
+                    "px-6 py-2 rounded-full text-sm font-medium transition-all duration-300",
+                    mode === m
+                        ? "bg-white/10 text-white shadow-lg"
+                        : "text-white/50 hover:text-white hover:bg-white/5"
+                )}
+            >
+                {m === "focus" ? t.timer.focus : m === "short" ? t.timer.shortBreak : t.timer.longBreak}
+            </button>
+        ))}
+    </div>
 
     useEffect(() => {
         let interval: NodeJS.Timeout;

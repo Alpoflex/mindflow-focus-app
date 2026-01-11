@@ -3,17 +3,29 @@
 import { useState, useRef } from "react";
 import { CloudRain, Coffee, Waves, Volume2, VolumeX } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const SOUNDS = [
-    { id: "rain", name: "Rain", icon: CloudRain, url: "https://assets.mixkit.co/active_storage/sfx/1109/1109-preview.mp3" }, // Placeholder CDN or public URL
-    { id: "cafe", name: "Cafe", icon: Coffee, url: "https://assets.mixkit.co/active_storage/sfx/2513/2513-preview.mp3" },
-    { id: "waves", name: "Waves", icon: Waves, url: "https://assets.mixkit.co/active_storage/sfx/1126/1126-preview.mp3" },
-];
+// Daha güvenilir ses kaynakları (placeholder olarak)
+const SOUND_URLS = {
+    rain: "https://assets.mixkit.co/active_storage/sfx/1109/1109-preview.mp3", // FIXME check mixkit url
+    // Rain icin baska bir url deneyelim, user 'ding' diyor dedi
+    // Asagidaki url 'Heavy rain' sesi
+    rain_new: "https://cdn.pixabay.com/audio/2022/02/16/audio_d144e05d27.mp3",
+    cafe: "https://cdn.pixabay.com/audio/2022/03/24/audio_3cb7c0500f.mp3", // Cafe ambiance
+    waves: "https://cdn.pixabay.com/audio/2022/01/18/audio_d0d52ef72f.mp3", // Ocean waves
+};
 
 export default function AmbientPlayer() {
+    const { t } = useLanguage();
     const [playing, setPlaying] = useState<string | null>(null);
     const [volume, setVolume] = useState(0.5);
     const audioRef = useRef<HTMLAudioElement | null>(null);
+
+    const sounds = [
+        { id: "rain", name: t.sounds.rain, icon: CloudRain, url: SOUND_URLS.rain_new },
+        { id: "cafe", name: t.sounds.cafe, icon: Coffee, url: SOUND_URLS.cafe },
+        { id: "waves", name: t.sounds.waves, icon: Waves, url: SOUND_URLS.waves },
+    ];
 
     const toggleSound = (soundId: string, url: string) => {
         if (playing === soundId) {
@@ -42,7 +54,7 @@ export default function AmbientPlayer() {
         <div className="fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 p-3 glass rounded-full shadow-2xl z-50">
             <audio ref={audioRef} />
 
-            {SOUNDS.map((sound) => (
+            {sounds.map((sound) => (
                 <button
                     key={sound.id}
                     onClick={() => toggleSound(sound.id, sound.url)}

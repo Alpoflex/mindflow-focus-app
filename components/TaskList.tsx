@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Trash2, Check, Circle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 interface Task {
     id: string;
@@ -12,6 +13,7 @@ interface Task {
 }
 
 export default function TaskList() {
+    const { t } = useLanguage();
     const [tasks, setTasks] = useState<Task[]>([]);
     const [inputValue, setInputValue] = useState("");
 
@@ -47,7 +49,7 @@ export default function TaskList() {
         <div className="w-full max-w-md mx-auto mt-8 p-6 glass rounded-2xl">
             <h2 className="text-xl font-semibold mb-6 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                Tasks
+                {t.tasks.title}
             </h2>
 
             <form onSubmit={addTask} className="relative mb-6">
@@ -55,7 +57,7 @@ export default function TaskList() {
                     type="text"
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
-                    placeholder="New task..."
+                    placeholder={t.tasks.placeholder}
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 pr-12 text-sm focus:outline-none focus:border-primary/50 focus:bg-white/10 transition-all placeholder:text-white/20"
                 />
                 <button
@@ -112,7 +114,7 @@ export default function TaskList() {
                             animate={{ opacity: 1 }}
                             className="text-center text-white/20 text-sm py-8 italic"
                         >
-                            Stay flow...
+                            {t.tasks.empty}
                         </motion.div>
                     )}
                 </AnimatePresence>
