@@ -1,39 +1,36 @@
-# MindFlow 🧠
+# MindFlow
 
-**Odaklan. Üret. Akışta kal.**
+Focus. Create. Breathe.
 
-MindFlow, uzun süredir aradığım o "sade ama güçlü" odaklanma uygulamasını bulamayınca "neden kendim yapmıyorum?" diyerek başladığım bir proje. Pomodoro tekniğini çok seviyorum ama marketteki uygulamalar ya çok karmaşık ya da tasarımı hoşuma gitmiyordu. Ben de hem Next.js pratik yapmak hem de kendim kullanacağım bir araç geliştirmek istedim.
+A minimal Pomodoro timer that doesn't get in your way.
 
-## Özellikler
+## The Idea
 
-Şu an için temel özellikler var ama geliştirmeye devam edeceğim:
+Most productivity apps are overwhelming. Too many features, too many notifications, too much noise.
 
-*   **Pomodoro Sayacı:** Klasik 25/5 dakika döngüsü. İleride özelleştirilebilir yapacağım.
-*   **Minimal Görev Listesi:** Sadece odaklandığım işleri not almak için. Karmaşık proje yönetimi toolları gibi değil.
-*   **Ambient Sesler:** Kod yazarken arkada yağmur sesi dinlemeyi sevdiğim için ekledim. Cafe ve Dalga sesleri de var.
+MindFlow is different:
+- **25-minute focus sessions**
+- **5-minute breaks**
+- **Ambient sounds** (optional)
+- **Nothing else**
 
-## Teknolojiler
+## Usage
 
-Bu projede güncel ve sevdiğim teknolojileri kullandım:
+```bash
+npm install && npm run dev
+```
 
-*   **Next.js 16**: App Router yapısını iyice oturtmak için.
-*   **Tailwind CSS**: Hızlı stil vermek için vazgeçilmezim.
-*   **Framer Motion**: Arayüzün biraz "canlı" hissettirmesi için animasyonlar ekledim.
+Press start. Work. That's it.
 
-## Nasıl Çalıştırılır?
+## Design Philosophy
 
-Projeyi denemek isterseniz:
+- Glassmorphic UI
+- Dark mode only
+- No accounts, no tracking
+- No distractions
 
-1.  Depoyu klonlayın.
-2.  Paketleri yükleyin: `npm install`
-3.  Başlatın: `npm run dev`
-
-## Yapılacaklar (Roadmap)
-
-*   [ ] Ayarlar menüsü (süreleri değiştirmek için)
-*   [ ] Spotify entegrasyonu (belki?)
-*   [ ] İstatistikler sayfası (bugün kaç pomodoro yaptım?)
+Built for people who just want to focus.
 
 ---
 
-*Geri bildirimlerinize açığım! Pull request atmaktan çekinmeyin.* 👋
+*Sometimes less is more.*
