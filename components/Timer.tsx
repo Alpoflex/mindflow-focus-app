@@ -5,27 +5,16 @@ import { motion } from "framer-motion";
 import { Play, Pause, RotateCcw } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-// Timer state logic
-// Default 25dk ile basliyoruz (Pomodoro standarti)
-const [timeLeft, setTimeLeft] = useState(25 * 60);
-const [isActive, setIsActive] = useState(false);
-const [mode, setMode] = useState<"focus" | "short" | "long">("focus");
-
-useEffect(() => {
-    let interval: NodeJS.Timeout;
-
-    // Timer aktifse her saniye update ediyoruz
-    if (isActive && timeLeft > 0) {
-        interval = setInterval(() => {
-            setTimeLeft((prev) => prev - 1);
-        }, 1000);
+interval = setInterval(() => {
+    setTimeLeft((prev) => prev - 1);
+}, 1000);
     } else if (timeLeft === 0) {
-        // Sure bitti!
-        // TODO: Buraya belki bir ses efekti eklenebilir
-        setIsActive(false);
-    }
+    // Sure bitti!
+    // TODO: Buraya belki bir ses efekti eklenebilir
+    setIsActive(false);
+}
 
-    return () => clearInterval(interval);
+return () => clearInterval(interval);
 }, [isActive, timeLeft]);
 
 const toggleTimer = () => setIsActive(!isActive);
