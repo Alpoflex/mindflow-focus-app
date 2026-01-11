@@ -14,8 +14,6 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
     const [language, setLanguage] = useState<Language>('en');
 
-    // Kullanicinin tarayici diline gore baslangic dili secebiliriz ama simdilik default en
-    // Istersen localStorage'dan da okuyabiliriz ileride
 
     const toggleLanguage = () => {
         setLanguage((prev) => (prev === 'en' ? 'tr' : 'en'));
