@@ -5,6 +5,7 @@ import { CloudRain, Coffee, Waves, Volume2, VolumeX } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+// Local MP3 files for maximum compatibility
 const SOUND_URLS = {
     rain: "/sounds/rain.mp3",
     cafe: "/sounds/cafe.mp3",

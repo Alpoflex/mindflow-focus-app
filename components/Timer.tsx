@@ -8,6 +8,8 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Timer() {
     const { t } = useLanguage();
+    // Timer state logic
+    // Default 25dk ile basliyoruz (Pomodoro standarti)
     const [timeLeft, setTimeLeft] = useState(25 * 60);
     const [isActive, setIsActive] = useState(false);
     const [mode, setMode] = useState<"focus" | "short" | "long">("focus");
@@ -15,11 +17,14 @@ export default function Timer() {
     useEffect(() => {
         let interval: number;
 
+        // Timer aktifse her saniye update ediyoruz
         if (isActive && timeLeft > 0) {
             interval = setInterval(() => {
                 setTimeLeft((prev) => prev - 1);
             }, 1000) as unknown as number;
         } else if (timeLeft === 0) {
+            // Sure bitti!
+            // TODO: Buraya belki bir ses efekti eklenebilir
             setIsActive(false);
         }
 

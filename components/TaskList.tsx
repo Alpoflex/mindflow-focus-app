@@ -20,6 +20,7 @@ export default function TaskList() {
     const addTask = (e: React.FormEvent) => {
         e.preventDefault();
 
+        // Bos task eklenmesin
         if (!inputValue.trim()) return;
 
         const newTask: Task = {
