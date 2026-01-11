@@ -5,11 +5,11 @@ import { CloudRain, Coffee, Waves, Volume2, VolumeX } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-// Google Actions Sound Library URLs - Reliable and Public Domain
+// Local MP3 files for maximum compatibility
 const SOUND_URLS = {
-    rain: "https://actions.google.com/sounds/v1/weather/rain_heavy_loud.ogg",
-    cafe: "https://actions.google.com/sounds/v1/ambiences/coffee_shop.ogg",
-    waves: "https://actions.google.com/sounds/v1/water/waves_crashing.ogg",
+    rain: "/sounds/rain.mp3",
+    cafe: "/sounds/cafe.mp3",
+    waves: "/sounds/waves.mp3",
 };
 
 export default function AmbientPlayer() {
