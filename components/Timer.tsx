@@ -13,12 +13,12 @@ export default function Timer() {
     const [mode, setMode] = useState<"focus" | "short" | "long">("focus");
 
     useEffect(() => {
-        let interval: NodeJS.Timeout;
+        let interval: number;
 
         if (isActive && timeLeft > 0) {
             interval = setInterval(() => {
                 setTimeLeft((prev) => prev - 1);
-            }, 1000);
+            }, 1000) as unknown as number;
         } else if (timeLeft === 0) {
             setIsActive(false);
         }
