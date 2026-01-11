@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MindFlow 🧠
 
-## Getting Started
+**Odaklan. Üret. Akışta kal.**
 
-First, run the development server:
+MindFlow, uzun süredir aradığım o "sade ama güçlü" odaklanma uygulamasını bulamayınca "neden kendim yapmıyorum?" diyerek başladığım bir proje. Pomodoro tekniğini çok seviyorum ama marketteki uygulamalar ya çok karmaşık ya da tasarımı hoşuma gitmiyordu. Ben de hem Next.js pratik yapmak hem de kendim kullanacağım bir araç geliştirmek istedim.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Özellikler
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Şu an için temel özellikler var ama geliştirmeye devam edeceğim:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+*   **Pomodoro Sayacı:** Klasik 25/5 dakika döngüsü. İleride özelleştirilebilir yapacağım.
+*   **Minimal Görev Listesi:** Sadece odaklandığım işleri not almak için. Karmaşık proje yönetimi toolları gibi değil.
+*   **Ambient Sesler:** Kod yazarken arkada yağmur sesi dinlemeyi sevdiğim için ekledim. Cafe ve Dalga sesleri de var.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Teknolojiler
 
-## Learn More
+Bu projede güncel ve sevdiğim teknolojileri kullandım:
 
-To learn more about Next.js, take a look at the following resources:
+*   **Next.js 16**: App Router yapısını iyice oturtmak için.
+*   **Tailwind CSS**: Hızlı stil vermek için vazgeçilmezim.
+*   **Framer Motion**: Arayüzün biraz "canlı" hissettirmesi için animasyonlar ekledim.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Nasıl Çalıştırılır?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Projeyi denemek isterseniz:
 
-## Deploy on Vercel
+1.  Depoyu klonlayın.
+2.  Paketleri yükleyin: `npm install`
+3.  Başlatın: `npm run dev`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Yapılacaklar (Roadmap)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+*   [ ] Ayarlar menüsü (süreleri değiştirmek için)
+*   [ ] Spotify entegrasyonu (belki?)
+*   [ ] İstatistikler sayfası (bugün kaç pomodoro yaptım?)
+
+---
+
+*Geri bildirimlerinize açığım! Pull request atmaktan çekinmeyin.* 👋

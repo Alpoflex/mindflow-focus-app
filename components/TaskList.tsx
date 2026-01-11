@@ -17,10 +17,12 @@ export default function TaskList() {
 
     const addTask = (e: React.FormEvent) => {
         e.preventDefault();
+
+        // Bos task eklenmesin
         if (!inputValue.trim()) return;
 
         const newTask: Task = {
-            id: crypto.randomUUID(),
+            id: crypto.randomUUID(), // Unique id lazim
             text: inputValue,
             completed: false,
         };
